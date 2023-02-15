@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="/icon1.png" />
+    <title>GoldenWheel</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="mainUi.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="nav-bar">
+        <nav>
+          <div>
+            <p class="welcome">
+              Golden Wheel
+              <span> <img src="logo.png" alt="Logo" class="logo" /></span>
+            </p>
+            <span><p class="logo-panel">the Wheel for life</p></span>
+          </div>
+
+          <div>
+            <br />
+            <h1 id="welcome-note" style="text-align: center"></h1>
+          </div>
+
+          <!-- <button  class=""> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="feature-icon"
+            id="log-face"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          <!-- </button> -->
+          <button id="out-face" class="hidden out-face" onclick="initialize()">
+            LogOut
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- main page -->
+
+    <div id="before-log" class="main-cont">
+      <!-- about -->
+      <div class="main">
+        <h4 class="about-label">ABOUT US</h4>
+        <div class="main_2">
+          <div>
+            <p>
+              <strong style="color: rgb(145, 123, 3)"
+                ><em>GOLDEN WHEEL</em></strong
+              >
+              is the most trustable and secure bank in this era. It's a fully
+              automated and cloud based bank developed by
+              <strong><em> "SHA"</em></strong>
+              we offer low interest loan for our customers and in future we also
+              going to introduce 0% interest loan scheme to our customers in the
+              base of their loyalty points which is calculated based on their
+              perious loan and account transaction status.
+            </p>
+
+            <address id="contact">
+              CONDUCT US: <br />
+              EMAIL:
+              <a href="mailto:goolden wheel@examble.com">click here!</a>
+              <br />
+              PHONE:
+              <a
+                href="tel:+143-83748928
+              "
+                >+143-83748928</a
+              >
+            </address>
+          </div>
+
+          <div class="slide">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!--Carousel Indicators-->
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#myCarousel"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+              </ol>
+              <!--Carousel Items-->
+              <div class="carousel-inner">
+                <!--tips: add data-interval="" to a .carousel-item to change the amount of time to delay before the next item.(Default: 5000)-->
+                <div class="carousel-item active">
+                  <img src="webdesigning.jpg" class="d-block w-100" alt="..." />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Virtual Banking</h5>
+                    <p>
+                      We introducing a virtual banking system by that you can
+                      access your bank any where in the world.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="faq.png" class="d-block w-100" alt="..." />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Ask Your Queries</h5>
+                    <p>
+                      Web have a dedicated customer relationship team. we ready
+                      to work for you 24/7*
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--Carousel Controls-->
+              <a
+                class="carousel-control-prev"
+                href="#myCarousel"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#myCarousel"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- form -->
+
+      <div class="log-form">
+        <div class="form-cont hidden">
+          <h3 class="login_label">LOGIN</h3>
+          <p id="user_error_1">ENTER YOUR LOGIN CREDENTIALS</p>
+          <form class="login">
+            <input
+              type="text"
+              placeholder="user"
+              class="login__input login__input--user"
+            />
+
+            <input
+              type="text"
+              placeholder="PIN"
+              maxlength="4"
+              class="login__input login__input--pin"
+            />
+
+            <div class="form-button">
+              <button id="log-bt" class="login__btn" style="text-align: center">
+                Login
+              </button>
+              <button
+                id="fg-bt"
+                class="login__btn hidden"
+                style="text-align: center"
+              >
+                Forget Pin
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-cont-1">
+          <img
+            style="margin: 65px 20px 20px 0"
+            src="b1.png"
+            alt=""
+            width="300px"
+            height="230px"
+          />
+        </div>
+
+        <!-- form below -->
+        <div class="log-details">
+          <p>
+            To create an account in our bank.
+            <span><a href="#contact">Contact </a></span>our customer
+            relationship team. They will assist you to create an account in our
+            bank.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- after log -->
+    <div id="after-log" class="hidden">
+      <div class="app">
+        <!-- BALANCE -->
+        <div class="balance">
+          <div>
+            <p class="balance__label">Current balance</p>
+            <p class="balance__date">
+              As of <span class="date">05/03/2037</span>
+            </p>
+          </div>
+          <p class="balance__value">0000€</p>
+          <p class="logout-timer">
+            Logged Out In <br />
+            <span class="timer">05:00</span>
+          </p>
+        </div>
+        <!-- SUMMARY -->
+        <div class="summary">
+          <button class="btn--sort">SORT &downarrow;</button>
+          <div>
+            <p class="summary__label">TOTAL DEPOSIT</p>
+            <p class="summary__value summary__value--in">0000€</p>
+          </div>
+          <div>
+            <p class="summary__label">TOTAL withdrawal</p>
+            <p class="summary__value summary__value--out">0000€</p>
+          </div>
+          <div>
+            <p class="summary__label">Interest</p>
+            <p class="summary__value summary__value--interest">0000€</p>
+          </div>
+        </div>
+
+        <div class="trans">
+          <!-- MOVEMENTS -->
+          <div class="movements">
+            <div class="movements__row">
+              <div class="movements__date">3 days ago</div>
+              <div class="movements__type movements__type--deposit">
+                2 deposit
+              </div>
+              <div class="movements__value">4 000€</div>
+            </div>
+            <div class="movements__row">
+              <div class="movements__type movements__type--withdrawal">
+                1 withdrawal
+              </div>
+              <div class="movements__date">24/01/2037</div>
+              <div class="movements__value">-378€</div>
+            </div>
+          </div>
+
+          <div class="banking">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <!--tips: to fill or justify the .nav-pills space use .nav-fill or .nav-justified-->
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="pills-trans-tab"
+                  data-toggle="pill"
+                  href="#pills-trans"
+                  role="tab"
+                  aria-controls="pills-trans"
+                  aria-selected="false"
+                >
+                  Money Transfer
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="pills-loan-tab"
+                  data-toggle="pill"
+                  href="#pills-loan"
+                  role="tab"
+                  aria-controls="pills-loan"
+                  aria-selected="false"
+                >
+                  Get Loan
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="pills-close-tab"
+                  data-toggle="pill"
+                  href="#pills-close"
+                  role="tab"
+                  aria-controls="pills-close"
+                  aria-selected="false"
+                >
+                  Close Account
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade"
+                id="pills-trans"
+                role="tabpanel"
+                aria-labelledby="pills-trans-tab"
+              >
+                <!-- OPERATION: TRANSFERS -->
+                <div class="operation operation--transfer">
+                  <h2>Transfer</h2>
+                  <form class="form form--transfer">
+                    <label class="form__label">Transfer to</label>
+                    <input type="text" class="form__input form__input--to" />
+                    <label class="form__label">Amount</label>
+                    <input
+                      type="number"
+                      class="form__input form__input--amount"
+                    />
+
+                    <button class="form__btn form__btn--transfer">send</button>
+                  </form>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-loan"
+                role="tabpanel"
+                aria-labelledby="pills-loan-tab"
+              >
+                <!-- OPERATION: LOAN -->
+                <div class="operation operation--loan">
+                  <h2>Request loan</h2>
+                  <form class="form form--loan">
+                    <label class="form__label form__label--loan">Amount</label>
+                    <input
+                      type="number"
+                      class="form__input form__input--loan-amount"
+                    />
+
+                    <button class="form__btn form__btn--loan">submit</button>
+                  </form>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-close"
+                role="tabpanel"
+                aria-labelledby="pills-close-tab"
+              >
+                <!-- OPERATION: CLOSE -->
+                <div class="operation operation--close">
+                  <h2>Close account</h2>
+                  <form class="form form--close">
+                    <label class="form__label">User Id</label>
+                    <input type="text" class="form__input form__input--user" />
+                    <label class="form__label">Confirm PIN</label>
+                    <input
+                      type="password"
+                      maxlength="6"
+                      class="form__input form__input--pin"
+                    />
+
+                    <button class="form__btn form__btn--close">submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
